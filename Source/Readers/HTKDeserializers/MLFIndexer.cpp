@@ -195,6 +195,10 @@ namespace Microsoft { namespace MSR { namespace CNTK {
 
             RefillBuffer();
         }
+
+        // Clean the buffer.
+        std::vector<char> tmp;
+        m_buffer.swap(tmp);
     }
 
     void MLFIndexer::ReadLines(vector<char>& buffer, vector<boost::iterator_range<char*>>& lines)
